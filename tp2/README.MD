@@ -1,6 +1,6 @@
 ## Question 1: ajout d'un nouveau podcast
 
-```curl
+```bash
 curl -X POST  http://localhost:3000/podcasts \
 -H "Content-Type: application/json" \
 -d '{
@@ -24,7 +24,7 @@ curl -X POST  http://localhost:3000/podcasts \
 
 ## Question 2: mettre à jour le podcast, en utilisant son ID 'PATCH /podcasts/:id'
 
-```curl
+```bash
 curl -X PATCH http://localhost:3000/podcasts/_jmMQtR \
 -H "Accept: application/json" \
 -H "Content-Type: application/json" \
@@ -37,11 +37,11 @@ curl -X PATCH http://localhost:3000/podcasts/_jmMQtR \
 *-I or HEAD* sends a HEAD request 
 
 cette commande affiche tous les entêtes
-```curl
+```bash
 curl -sI localhost:3000
 ```
 
 pour afficher juste l'entête HTTP (200 OK, 400 Bad Request ..etc), on utilise la commande *sed* pour filtrer le résultat précédent
-```curl
+```bash
 curl -sI localhost:3000 | sed -En 's/^HTTP\/1.1 (.*)/\1/p'
 ```
