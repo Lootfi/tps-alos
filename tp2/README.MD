@@ -36,12 +36,12 @@ curl -X PATCH http://localhost:3000/podcasts/_jmMQtR \
 *-s or --silent* Silent mode.
 *-I or HEAD* sends a HEAD request 
 
-cette commande affiche tous les entêtes
+cette commande affiche tous les entêtes de requète
 ```bash
 curl -sI localhost:3000
 ```
 
-pour afficher juste l'entête HTTP (200 OK, 400 Bad Request ..etc), on utilise la commande *sed* pour filtrer le résultat précédent
+si on veut afficher seulement l'entête HTTP (200 OK, 400 Bad Request ..etc), on utilise la commande *sed* pour filtrer le résultat précédent
 ```bash
 curl -sI localhost:3000 | sed -En 's/^HTTP\/1.1 (.*)/\1/p'
 ```
