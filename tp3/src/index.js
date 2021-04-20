@@ -7,6 +7,7 @@ import {
 } from 'express-validator'
 import {
     get_podcasts,
+    get_podcast,
     add_podcast,
     update_podcast,
     delete_podcast
@@ -19,6 +20,10 @@ app.use(json())
 
 app.get('/podcasts', (req, res) => {
     res.json(get_podcasts())
+})
+
+app.get('/podcasts/:id', (req, res) => {
+    res.json(get_podcast(req.params.id)).status(200)
 })
 
 app.post('/podcasts',

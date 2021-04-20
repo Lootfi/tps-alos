@@ -6,6 +6,14 @@ import podcasts from '../../database/podcasts.json';
 export function get_podcasts() {
     return podcasts;
 }
+
+export const get_podcast = id => {
+    const podcast = podcasts.find(podcast => podcast.id == id)
+
+    return podcast
+}
+
+
 export function add_podcast(podcast) {
     let new_podcasts = [
         ...podcasts,
