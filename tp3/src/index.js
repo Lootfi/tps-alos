@@ -1,20 +1,24 @@
-const express = require('express')
-var podcasts = require('./database/podcasts.json')
-var {
+import express, {
+    json
+} from 'express'
+import {
     body,
     validationResult
-} = require('express-validator')
-const {
+} from 'express-validator'
+import {
+    get_podcasts,
     add_podcast,
     update_podcast,
     delete_podcast
-} = require('./utils/database')
+} from './utils/database'
+
+
 
 var app = express()
-app.use(express.json())
+app.use(json())
 
 app.get('/podcasts', (req, res) => {
-    res.json(podcasts)
+    res.json(get_podcasts())
 })
 
 app.post('/podcasts',
