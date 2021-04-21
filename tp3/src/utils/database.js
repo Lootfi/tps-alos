@@ -17,7 +17,10 @@ export const get_podcast = id => {
 export function add_podcast(podcast) {
     let new_podcasts = [
         ...podcasts,
-        podcast
+        {
+            "id": Date.now().toString(36),
+            ...podcast
+        }
     ];
     const new_data = JSON.stringify(new_podcasts);
 

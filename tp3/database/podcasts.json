@@ -1609,4 +1609,17 @@
         "id": 0,
         "name": "Klein Frazier"
     }]
+}, {
+    "id": "kns0tz0b",
+    "name": "Hello There 101",
+    "status": "Hiatus",
+    "listeners": 58100,
+    "picture": "http://placehold.it/320x320",
+    "about": "Reprehenderit nulla veniam ex proident veniam dolor do elit proident cupidatat ullamco. Nulla ea sint ea nisi ipsum. Laboris quis anim ad pariatur. Irure magna officia veniam eu ad cupidatat in ullamco in do Lorem deserunt.",
+    "releaseDate": "Wednesday, March 200",
+    "category": "fiction",
+    "hosts": [{
+        "id": 0,
+        "name": "Maradona Rey"
+    }]
 }]
