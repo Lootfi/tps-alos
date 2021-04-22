@@ -9,6 +9,9 @@ function check_if_date(string) {
 }
 
 export default {
+    get_podcast: [
+        param('id').isString().trim()
+    ],
     create_podcast: [
         body('name').isString().trim(),
         body('status').isString().trim(),
