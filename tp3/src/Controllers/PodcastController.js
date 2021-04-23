@@ -12,11 +12,16 @@ import {
 
 export default {
     get_all: (req, res) => {
-        res.json(get_podcasts()).status(200)
+        res.status(200).json(get_podcasts())
     },
 
     get: (req, res) => {
-        res.json(get_podcast(req.params.id)).status(200)
+        const podcast = get_podcast(req.params.id)
+        if (podcast)
+            res.status(200).json(podcast)
+        else res.status(404).json({
+            error: 'Podcast Not Found'
+        })
     },
 
     create: (req, res) => {
@@ -30,7 +35,7 @@ export default {
 
         const new_podcasts = add_podcast(req.body)
 
-        res.json(new_podcasts).status(201)
+        res.status(201).json(new_podcasts)
     },
 
     update: (req, res) => {
@@ -46,7 +51,7 @@ export default {
 
         const new_podcasts = update_podcast(id, req.body)
 
-        res.json(new_podcasts).status(200)
+        res.status(200).json(new_podcasts)
     },
 
     delete: (req, res) => {
@@ -62,6 +67,6 @@ export default {
 
         const new_podcasts = delete_podcast(id)
 
-        res.json(new_podcasts).status(200)
+        res.status(200).json(new_podcasts)
     }
 }

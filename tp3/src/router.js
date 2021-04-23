@@ -4,6 +4,8 @@ import PodcastController from './Controllers/PodcastController'
 
 const router = express.Router()
 
+// podcasts
+
 router.get('/podcasts', PodcastController.get_all)
 
 router.get('/podcasts/:id',
@@ -21,6 +23,7 @@ router.put('/podcasts/:id',
 router.delete('/podcasts/:id',
     ...validation.delete_podcast,
     PodcastController.delete)
+
 
 
 export default router;
