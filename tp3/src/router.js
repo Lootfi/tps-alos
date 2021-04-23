@@ -1,6 +1,7 @@
 import express from 'express'
 import validation from './utils/validation'
 import PodcastController from './Controllers/PodcastController'
+import HostController from './Controllers/HostController'
 
 const router = express.Router()
 
@@ -24,6 +25,16 @@ router.delete('/podcasts/:id',
     ...validation.delete_podcast,
     PodcastController.delete)
 
+
+// hosts
+
+router.get('/podcasts/:id/hosts',
+    HostController.get_podcast_hosts
+)
+
+// route.post('/podcasts/:id/hosts',
+//     ...validation.create_host,
+//     HostController.create)
 
 
 export default router;

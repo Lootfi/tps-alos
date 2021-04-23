@@ -1,33 +1,13 @@
 [{
-    "id": "6071900fd362712d08fbdf36",
-    "index": 12,
+    "id": "6071900f186afbe1ec4fe591",
+    "index": 13,
     "name": "PODCAST NAME",
     "status": "Ongoing",
     "listeners": 540105,
     "picture": "http://placehold.it/320x320",
-    "about": "Non ea ex elit magna. Lorem aliquip est proident tempor reprehenderit qui tempor eiusmod. Deserunt do mollit nostrud est est est culpa ex pariatur culpa deserunt magna dolor.",
-    "releaseDate": "Thursday, August 6, 2020 1:54 PM",
-    "category": "fiction",
-    "hosts": [{
-        "id": 0,
-        "name": "Potter Baker"
-    }, {
-        "id": 1,
-        "name": "Shepard Pollard"
-    }, {
-        "id": 2,
-        "name": "Hall Chang"
-    }]
-}, {
-    "id": "6071900f186afbe1ec4fe591",
-    "index": 13,
-    "name": "UT AUTE SUNT OFFICIA MOLLIT",
-    "status": "Completed",
-    "listeners": 843282,
-    "picture": "http://placehold.it/320x320",
     "about": "Magna culpa occaecat proident ad qui. Deserunt irure nulla in magna enim cillum dolore elit cupidatat ex quis sit. Voluptate ullamco cillum incididunt laborum laboris nostrud.",
     "releaseDate": "Thursday, November 5, 2015 7:26 AM",
-    "category": "series",
+    "category": "fiction",
     "hosts": [{
         "id": 0,
         "name": "Jenna Black"
@@ -1492,5 +1472,18 @@
     "hosts": [{
         "id": 0,
         "name": "Klein Frazier"
+    }]
+}, {
+    "id": "kntm5lx5",
+    "name": "Hello There 108",
+    "status": "Hiatus",
+    "listeners": 58100,
+    "picture": "http://placehold.it/320x320",
+    "about": "Reprehenderit nulla veniam ex proident veniam dolor do elit proident cupidatat ullamco. Nulla ea sint ea nisi ipsum. Laboris quis anim ad pariatur. Irure magna officia veniam eu ad cupidatat in ullamco in do Lorem deserunt.",
+    "releaseDate": "Wednesday, March 200",
+    "category": "fiction",
+    "hosts": [{
+        "id": 0,
+        "name": "Maradona Rey"
     }]
 }]
