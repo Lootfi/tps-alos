@@ -48,5 +48,10 @@ export default {
     ],
     delete_podcast: [
         param('id').isString().trim()
+    ],
+    // hosts
+    create_host: [
+        body('name').isString().trim().customSanitizer(value => capitalize(value)),
+        body('email').trim().isEmail()
     ]
 }

@@ -20,21 +20,20 @@ router.post('/podcasts',
 router.put('/podcasts/:id',
     ...validation.update_podcast,
     PodcastController.update)
-
 router.delete('/podcasts/:id',
     ...validation.delete_podcast,
-    PodcastController.delete)
+    PodcastController.delete) //deletes hosts too
 
 
 // hosts
 
 router.get('/podcasts/:id/hosts',
-    HostController.get_podcast_hosts
+    HostController.get
 )
 
-// route.post('/podcasts/:id/hosts',
-//     ...validation.create_host,
-//     HostController.create)
+router.post('/podcasts/:id/hosts',
+    ...validation.create_host,
+    HostController.create)
 
 
 export default router;
