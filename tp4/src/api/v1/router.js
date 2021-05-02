@@ -37,8 +37,3 @@ router.post('/podcasts/:id/hosts',
 
 
 export default router;
-
-// export default (app) => {
-//     // bootstrap api routes
-//     app.use('/api/v1', router);
-// };

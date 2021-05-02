@@ -34,6 +34,10 @@ router.get('/podcasts/:id/hosts',
 )
 
 router.post('/podcasts/:id/hosts',
+    (req, res, next) => {
+        res.status(200).send(Object.keys(req))
+        // next()
+    },
     ...validation.create_host,
     HostController.create)
 
@@ -61,8 +65,3 @@ router.get('/users/:id/reviews',
     UserController.get_reviews)
 
 export default router;
-
-// export default (app) => {
-//     // bootstrap api routes
-//     app.use('/api/v2', router);
-// };

@@ -18,14 +18,6 @@ export default {
     create: (req, res) => {
         const podcast_id = req.params.id
 
-        const errors = validationResult(req)
-
-        if (!errors.isEmpty()) {
-            return res.status(400).json({
-                errors: errors.array()
-            });
-        }
-
         const new_hosts = add_host({
             podcast_id,
             ...req.body

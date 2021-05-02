@@ -32,26 +32,12 @@ export default {
         })
     },
     create: (req, res) => {
-        const errors = validationResult(req)
-
-        if (!errors.isEmpty()) {
-            return res.status(400).json({
-                errors: errors.array()
-            });
-        }
 
         const new_users = add_user(req.body)
 
         res.status(201).json(new_users)
     },
     delete: (req, res) => {
-        const errors = validationResult(req)
-
-        if (!errors.isEmpty()) {
-            return res.status(400).json({
-                errors: errors.array()
-            });
-        }
 
         const id = req.params.id
 

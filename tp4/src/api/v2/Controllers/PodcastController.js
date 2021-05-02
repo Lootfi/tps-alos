@@ -25,13 +25,6 @@ export default {
     },
 
     create: (req, res) => {
-        const errors = validationResult(req)
-
-        if (!errors.isEmpty()) {
-            return res.status(400).json({
-                errors: errors.array()
-            });
-        }
 
         const new_podcasts = add_podcast(req.body)
 
@@ -39,13 +32,6 @@ export default {
     },
 
     update: (req, res) => {
-        const errors = validationResult(req)
-
-        if (!errors.isEmpty()) {
-            return res.status(400).json({
-                errors: errors.array()
-            });
-        }
 
         const id = req.params.id
 
@@ -55,13 +41,6 @@ export default {
     },
 
     delete: (req, res) => {
-        const errors = validationResult(req)
-
-        if (!errors.isEmpty()) {
-            return res.status(400).json({
-                errors: errors.array()
-            });
-        }
 
         const id = req.params.id
 
