@@ -148,7 +148,7 @@ export function delete_review(id) {
 //users
 
 export function get_users() {
-    return users
+    return users;
 }
 
 //get user

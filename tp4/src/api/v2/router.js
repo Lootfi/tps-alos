@@ -34,17 +34,13 @@ router.get('/podcasts/:id/hosts',
 )
 
 router.post('/podcasts/:id/hosts',
-    (req, res, next) => {
-        res.status(200).send(Object.keys(req))
-        // next()
-    },
     ...validation.create_host,
     HostController.create)
 
 // reviews
 
 router.get('/podcasts/:id/reviews',
-    ReviewController.get_podcast_reviews)
+    PodcastController.get_reviews)
 
 router.post('/podcasts/:id/reviews',
     ReviewController.create)

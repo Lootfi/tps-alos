@@ -1,22 +1,11 @@
-import {
-    validationResult
-} from 'express-validator'
-
-import {
-    get_users,
-    get_user,
-    add_user,
-    delete_user,
-    get_user_reviews,
-    delete_user_reviews
-} from '../../../utils/database'
+import User from '../Models/User'
 
 export default {
     get_all: (req, res) => {
-        res.status(200).json(get_users())
+        res.status(200).json(User.get_all())
     },
     get: (req, res) => {
-        const user = get_user(req.params.id)
+        const user = User.get_all(req.params.id)
         if (user)
             res.status(200).json(user)
         else res.status(404).json({
@@ -24,7 +13,7 @@ export default {
         })
     },
     get_reviews: (req, res) => {
-        const reviews = get_user_reviews(req.params.id)
+        const reviews = User.get_reviews(req.params.id)
         if (reviews != [])
             res.status(200).json(reviews)
         else res.status(404).json({
@@ -33,7 +22,7 @@ export default {
     },
     create: (req, res) => {
 
-        const new_users = add_user(req.body)
+        const new_users = User.add(req.body)
 
         res.status(201).json(new_users)
     },
@@ -41,14 +30,14 @@ export default {
 
         const id = req.params.id
 
-        const new_users = delete_user(id)
+        const new_users = User.delete(id)
 
         res.status(200).json(new_users)
     },
     delete_all_review: (req, res) => {
         const user_id = req.params.id
 
-        const new_reviews = delete_user_reviews(user_id)
+        const new_reviews = User.delete_reviews(user_id)
 
         res.status(200).json(new_reviews)
 

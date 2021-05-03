@@ -1,24 +1,17 @@
-import {
-    validationResult
-} from "express-validator"
-import {
-    add_host,
-    get_podcast_hosts
-} from "../../../utils/database"
+import Host from '../Models/Host'
 
 export default {
+    get_all: (req, res) => {
+        res.status(200).json(Host.get_all())
+    },
     get: (req, res) => {
-        const hosts = get_podcast_hosts(req.params.id)
-        if (hosts.length != 0)
-            res.status(200).json(hosts)
-        else res.status(404).json({
-            error: 'Podcast or Hosts Not Found'
-        })
+        const host = Host.get(req.params.id)
+        res.status(200).json(host)
     },
     create: (req, res) => {
         const podcast_id = req.params.id
 
-        const new_hosts = add_host({
+        const new_hosts = Host.add({
             podcast_id,
             ...req.body
         })
