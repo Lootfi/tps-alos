@@ -14,20 +14,25 @@ export default {
 
         return user
     },
+    get_by(param, value) { //gets the user by the name of the parameter and it's value
+        const user = users.find(user => user[param] == value)
 
+        return user
+    },
     add(user) {
+        const new_user = {
+            ...user,
+            "id": Date.now().toString(36)
+        }
         let new_users = [
             ...users,
-            {
-                ...user,
-                "id": Date.now().toString(36)
-            }
+            new_user
         ]
         const new_data = JSON.stringify(new_users)
 
         writeFileSync("database/users.json", new_data)
 
-        return new_users
+        return new_user
     },
 
     //delete user
