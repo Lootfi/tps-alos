@@ -53,5 +53,13 @@ The first version only queries podcasts and hosts.
 ### v2
 
 In the second version, you can query users and their reviews, in addition to everything in v1.
+On top of that, v2 offers authentification and authorization to all routes.
+
+#### Authentification
+You can use */api/auth/register* to register a user account
+
+And */api/auth/login* to login to your existing account
+
+All *v2* routes will check for the *access-token* header, no prefixes.
 
 
