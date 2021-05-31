@@ -3,11 +3,12 @@ import express, {
 } from 'express'
 import router from './router'
 import errorHandlers from './utils/errorHandlers'
-
+import cors from 'cors'
 
 let app = express()
 
 app.use(json())
+app.use(cors())
 
 app.use('/api/', router)
 

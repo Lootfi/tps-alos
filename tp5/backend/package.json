@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "clean": "rm -rf build && mkdir build",
-    "build-babel": "babel -wd ./build ./src -s",
+    "build-babel": "babel -d ./build ./src -s",
     "build": "npm run clean && npm run build-babel",
     "start-babel": "npm run build && nodemon ./build/index.js",
     "watch": "nodemon ./build",
@@ -19,6 +19,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "cors": "^2.8.5",
     "express": "^4.17.1",
     "express-validator": "^6.10.0"
   },
