@@ -6,8 +6,22 @@ import {
   Button,
   InputLabel,
 } from "@material-ui/core";
-import React, { useState } from "react";
+import React from "react";
 import { useFormik } from "formik";
+import * as Yup from "yup";
+
+const createPodcastSchema = Yup.object().shape({
+  name: Yup.string()
+    .min(2, "Name too Short!")
+    .max(100, "Name too Long!")
+    .required("Name is Required"),
+  about: Yup.string()
+    .min(2, "Too Short!")
+    .max(500, "Too Long!")
+    .required("Description is Required"),
+  category: Yup.string().required("Required!"),
+  status: Yup.string().required("Required"),
+});
 
 export default function CreatePodcast() {
   const formik = useFormik({
@@ -17,7 +31,9 @@ export default function CreatePodcast() {
       about: "",
       category: "fiction",
     },
+    validationSchema: createPodcastSchema,
     onSubmit: (values) => {
+      console.log(values);
       window.axios
         .post("api/podcasts", {
           ...values,
@@ -62,6 +78,7 @@ export default function CreatePodcast() {
               displayEmpty
               value={formik.values.categoty}
               onChange={formik.handleChange}
+              helperText={formik.touched.category && formik.errors.category}
             >
               <option value={"fiction"}>Fiction</option>
               <option value={"interviews"}>Interviews</option>
@@ -82,6 +99,7 @@ export default function CreatePodcast() {
               id="status_select"
               value={formik.values.status}
               onChange={formik.handleChange}
+              helperText={formik.touched.status && formik.errors.status}
             >
               <option value={"Ongoing"}>Ongoing</option>
               <option value={"Hiatus"}>Hiatus</option>
@@ -101,6 +119,7 @@ export default function CreatePodcast() {
             name="about"
             value={formik.values.about}
             onChange={formik.handleChange}
+            helperText={formik.touched.about && formik.errors.about}
           />
         </Grid>
         <Grid item md={2} sm={3} xs={6}>

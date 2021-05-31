@@ -9,12 +9,20 @@ import TableRow from "@material-ui/core/TableRow";
 import Paper from "@material-ui/core/Paper";
 // import {get} from 'axios'
 import { Link } from "react-router-dom";
+import { Button } from "@material-ui/core";
 
 const useStyles = makeStyles({
   table: {
     minWidth: 650,
   },
 });
+
+// function deletePodcast(id) {
+//   console.log("help");
+//   // window.axios.delete(`api/podcasts/${id}`).then((res) => {
+//   //   window.location = "/podcasts";
+//   // });
+// }
 
 export default function Podcasts() {
   const classes = useStyles();
@@ -37,6 +45,7 @@ export default function Podcasts() {
             <TableCell align="right">Category</TableCell>
             <TableCell align="right">Release Date</TableCell>
             <TableCell align="right">Listeners</TableCell>
+            <TableCell align="right">Options</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
@@ -50,6 +59,18 @@ export default function Podcasts() {
                 <TableCell align="right">{podcast.category}</TableCell>
                 <TableCell align="right">{podcast.releaseDate}</TableCell>
                 <TableCell align="right">{podcast.listeners}</TableCell>
+                <TableCell align="right">
+                  <button
+                    color="secondary"
+                    onClick={() =>
+                      window.axios
+                        .delete(`api/podcasts/${podcast.id}`)
+                        .then(() => (window.location = "/podcasts"))
+                    }
+                  >
+                    delete
+                  </button>
+                </TableCell>
               </TableRow>
             ))}
         </TableBody>
